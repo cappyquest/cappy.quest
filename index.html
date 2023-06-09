@@ -43,7 +43,7 @@
       margin: 1;
       position: relative;
       left: 90%;
-      text-align: left;
+      text-align: right;
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
@@ -66,9 +66,9 @@
       transform: translate(-50%, -50%);
     }
     .socialbutton {
-      font-size: 30;
+      font-size: 35;
       font-family: Verdana;
-      width: 50;
+      width: 80;
     }
 
   </style>
@@ -83,18 +83,69 @@
   </div>
   <div class = "linkdiv">
     <a class = "socialbutton"
-    href="https://osu.ppy.sh/users/6668666"> osu
+    href="https://osu.ppy.sh/users/6668666" target = "_blank"> osu
     </a>
     <a class = "socialbutton"
-    href="https://twitter.com/HeyItsCap"> twitter
+    href="https://twitter.com/HeyItsCap" target = "_blank"> twitter
     </a>
     <a class = "socialbutton" 
-    href="https://www.youtube.com/channel/UCRabMCyLPQtFyLO4hx56y-A"> youtube
+    href="https://www.youtube.com/@HeyItsCap" target = "_blank" > youtube
+    </a>
+    <a class = "socialbutton" 
+    href="https://www.youtube.com/channel/UCRabMCyLPQtFyLO4hx56y-A" target = "_blank"> osu_yt
     </a>
     <a class = "socialbutton"
     href="gallery.html"> gallery
     </a>
   </div>
+  <a href = "https://youtu.be/bfzYj-qGw7U?t=314" target = "_blank" id = "bogotext" style = "color: white; font-size: 40; font-family: Verdana; margin-top: 120; text-decoration: none; position: absolute; left: 49.9%; text-align: center; -ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+    0 0 0 0 0 0
+  </a>
   <button class = "minecraft" onclick=  "window.open('thebogowithnomemoryleak.zip')">Free Minecraft Download</button>
   <img class = "pache" src = "pache.png" alt = "pache"/>
 </body>
+<script>
+  function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+  }
+  const compareArrays = (a, b) => {
+    return a.toString() === b.toString();
+  };
+  var t=setInterval(dobogo,500);
+  let isbogo = false;
+  let setorder = [1,2,3,4,5,6];
+  let bogo = [1,2,3,4,5,6];
+  console.log(bogo);
+  function dobogo(){
+    if (isbogo == false){
+      shuffle(bogo);
+      document.getElementById("bogotext").innerHTML = bogo.toString().replace(",", " ").replace(",", " ").replace(",", " ").replace(",", " ").replace(",", " ").replace(",", " ");
+      console.log(bogo);
+      if (compareArrays(bogo, setorder)){
+        console.log(bogo);
+        console.log(setorder);
+        isbogo = true
+      }
+    } else {
+      if (document.getElementById("bogotext").style.opacity != 0){
+        document.getElementById("bogotext").style.opacity = 0;
+      } else {
+        document.getElementById("bogotext").style.opacity = 255;
+      }
+    }
+  }
+</script>
