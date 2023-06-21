@@ -30,37 +30,60 @@
         right: 10%;
         bottom: -60%;
       }
-      .ichijoutxt {
-        margin-top: 350;
-        text-align: center;
+      .ichijoutxt2 {
         font-family: Verdana;
         color: white;
-        font-size: 10;
-      }
-      .ichijou {
-        height: 500;
-      }
-      .ichiclass > * {
-        display:flex;
-        vertical-align:middle;
+        font-size: 30;
+        vertical-align: middle;
         position: absolute;
-        left: 50%;
-        top: 50%;
+        left: 25%;
+        top: 60%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+      }
+      .ichijoutxt {
+        font-family: Verdana;
+        color: white;
+        font-size: 30;
+        vertical-align: middle;
+        position: absolute;
+        left: 73.5%;
+        top: 60%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      .ichijou {
+        position: absolute;
+        width: 530;
+        left: 50%;
+        top: 60%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
       }
     </style>
     <a class = "cappy" href='index.html'>
       cappy quest
     </a>
-    <div class = "ichiclass">
-      <a href = "2.html">
-        <img class = "ichijou" src = "1.jpg" alt = "run"/>
-      </a>
-      <p class = "ichijoutxt">
-        click to view next image
-      </p>
-    </div>
+    <img id = "ichijou" class = "ichijou" src = "gallery/1.jpg" alt = "run"/>
+    <p class = "ichijoutxt2" onclick = "if (gal-1 > 0){gallerySet(gal-1);} else{gallerySet(num-1);}">
+      <u>click to view previous
+    </p>
+    <p id = "ichijoutxt" class = "ichijoutxt" onclick = "if (gal+1 < num){gallerySet(gal+1);} else{gallerySet(1);}">
+      <u>click to view next
+    </p>
     <img class = "pache" src = "pache.png" alt = "pache"/>
 
   </body>
+  <script>
+    var gal = 1;
+    const num = 20;
+    let ext = [".png", ".jpg", ".png", ".jpeg", ".png", ".jpg", ".png", ".jpg", ".jpg", ".jpg", ".png", ".png", ".png", ".png", ".png", ".png", ".png", ".png", ".png", ".png"];
+    let galimage = "";
+    function gallerySet(val){
+      gal=val;
+      galimage = val + ext[val];
+      document.getElementById("ichijou").src="gallery/" + galimage;
+    }
+    
+  </script>
