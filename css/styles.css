@@ -37,6 +37,15 @@ p {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+.malo {
+    position: absolute;
+    width: 250;
+    left: 50%;
+    top: 92.2%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: gainsboro
+  }
 .minecraft {
     align-self: center;
     text-align: center;
@@ -51,7 +60,7 @@ p {
     margin: 0;
     position: absolute;
     left: 50%;
-    top: 110%;
+    top: 125%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
